@@ -1,8 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringBar extends Bar {
-    boolean happyHour;
+    boolean happyHour = false;
 
     public StringBar(){
-        this.happyHour = false;
+        this(new ArrayList<>());
+    }
+    public StringBar(List<BarObserver> observers){
+        super(observers);
     }
     @Override
     public boolean isHappyHour() {
@@ -12,10 +18,12 @@ public class StringBar extends Bar {
     @Override
     public void startHappyHour() {
         happyHour = true;
+        notifyObservers();
     }
 
     @Override
     public void endHappyHour() {
         happyHour = false;
+        notifyObservers();
     }
 }

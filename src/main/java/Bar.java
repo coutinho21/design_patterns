@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract public class Bar {
-    private List<BarObserver> observers;
-    public Bar(){
-        this.observers = new ArrayList<>();
+    List<BarObserver> observers;
+    public Bar(List<BarObserver> observers){
+        this.observers = observers;
     }
     abstract public boolean isHappyHour();
     abstract public void startHappyHour();
